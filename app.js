@@ -5,6 +5,10 @@ const app = express();
 
 // app.use(express.static(path.join(__dirname, "../build")));
 
+app.get("/mock", (req, res) => {
+  res.send("hello world");
+});
+
 app.get("/video", (req, res) => {
   const filePath = path.resolve(__dirname, "./videos/myvideo.mkv");
   const stat = fs.statSync(filePath);
